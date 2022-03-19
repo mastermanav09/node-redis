@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('includes/head.ejs') %>
+  </head>
+
+  <body>
+    <%-include('includes/navbar.ejs') %>
+
+    <div class="container my-5">
+      <h1>Search Users</h1>
+      <form action="/user/search" class="form-inline" method="POST">
+        <div class="form-group">
+          <input
+            type="text"
+            name="id"
+            id="id"
+            class="form-control"
+            placeholder="Search Users"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary my-3">Search</button>
+      </form>
+      <% if (error) { %>
+      <p><%= error %></p>
+      <% } %>
+    </div>
+
+    <%-include('includes/bootstrapScript.ejs') %>
+  </body>
+</html>
